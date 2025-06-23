@@ -571,3 +571,45 @@ font-weight: bold;
     padding: 60px 20px !important;
   }
 }
+/* Make about text bolder and better aligned on mobile */
+@media (max-width: 768px) {
+  .about-text {
+    font-weight: 600;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 60px 20px;
+    align-items: center;
+  }
+
+  .about-images {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .about-images img:first-child,
+  .about-images img:last-child {
+    width: 90%;
+    position: static;
+    transform: none;
+  }
+}
+
+/* Make step text stay inside the box */
+.process-step[data-step="1"]::after,
+.process-step[data-step="2"]::after,
+.process-step[data-step="3"]::after {
+  font-size: 15px;
+  padding: 20px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
