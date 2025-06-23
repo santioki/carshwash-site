@@ -25,28 +25,9 @@ h1, h2, h3 {
 
 p {
   margin: 5px 0;
-}
+} 
 
-.highlights {
-  background-color: #0a2540;
-  padding: 60px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  text-align: center;
-}
 
-.highlight-card {
-  background-color: #e4e2db;
-  color: #0a2540;
-  padding: 20px 40px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  min-width: 220px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
 
 
 
@@ -582,6 +563,7 @@ font-weight: bold;
 }
 
 }
+
 .highlights {
   display: flex;
   flex-wrap: wrap;
