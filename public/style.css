@@ -482,69 +482,33 @@ font-weight: bold;
   font-size: 16px;
 }
 
+
 @media (max-width: 768px) {
   .about {
     flex-direction: column;
     padding: 40px 20px;
+    align-items: center;
   }
 
-  .about-text,
-  .about-images {
+  .about-text, .about-images {
     padding: 0;
     text-align: center;
     align-items: center;
   }
 
-  .about-images img:first-child,
-  .about-images img:last-child {
-    width: 90% !important;
-    position: static !important;
-    transform: none !important;
-    margin-bottom: 20px;
+  .about-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.3;
   }
 
-  .services-grid,
-  .process-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card,
-  .process-step {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    padding: 30px 20px;
-  }
-
-  .gallery img {
-    width: 90%;
-    height: auto;
-  }
-
-  .booking-form {
-    width: 90%;
-  }
-}
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .highlight-card,
-  .card,
-  .process-step,
-  .valet-block,
-  .booking-form,
-  .gallery img {
-    width: 100% !important;
+  .about-text p {
     max-width: 90%;
     margin: 0 auto;
-  }
-
-  .about-images {
-    padding-left: 0 !important;
-    align-items: center !important;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    word-break: break-word;
   }
 
   .about-images img {
@@ -553,99 +517,7 @@ font-weight: bold;
     transform: none !important;
     margin: 10px auto;
   }
-
-  .services-grid,
-  .process-grid {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .booking-form-section,
-  .about,
-  .testimonials,
-  .contact {
-    padding: 40px 20px !important;
-  }
-
-  .features {
-    padding: 60px 20px !important;
-  }
-}
-/* Make about text bolder and better aligned on mobile */
-@media (max-width: 768px) {
-  .about-text {
-    font-weight: 600;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .about-text h2 {
-    text-align: center;
-  }
-
-  .about {
-    flex-direction: column;
-    padding: 60px 20px;
-    align-items: center;
-  }
-
-  .about-images {
-    padding-left: 0;
-    align-items: center;
-  }
-
-  .about-images img:first-child,
-  .about-images img:last-child {
-    width: 90%;
-    position: static;
-    transform: none;
-  }
-}
-
-/* Make step text stay inside the box */
-.process-step[data-step="1"]::after,
-.process-step[data-step="2"]::after,
-.process-step[data-step="3"]::after {
-  font-size: 15px;
-  padding: 20px;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .about-text {
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-.about-text p {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.7;
-  word-break: break-word;
-}
-
-  .process-step::after {
-    font-size: 15px;
-    padding: 16px;
-    display: block;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-section h2 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
+  
 
   .about-section {
     padding: 0 20px;
