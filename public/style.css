@@ -560,4 +560,11 @@ font-weight: bold;
     transform: none !important;
     margin: 10px auto;
   }
+  @media (max-width: 768px) {
+  a[href^="tel"] {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
+
 }
