@@ -1,18 +1,13 @@
-require('dotenv').config(); // add this at the top if not already present
+require('dotenv').config();
 
 const express = require('express');
 const router = express.Router();
 
-const Booking = require('../models/Booking');
-const Contact = require("../models/contact");
-
-
-// Dummy admin credentials for testing
-require('dotenv').config(); // 👈 Make sure this is at the top of the file
+const Booking = require('../models/Booking'); // ✅ Add this
+const Contact = require('../models/contact'); // ✅ Add this
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
- // Change this later for real use
 
 // POST /api/admin/login
 router.post('/login', (req, res) => {
