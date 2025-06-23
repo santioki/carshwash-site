@@ -640,6 +640,7 @@ font-weight: bold;
     max-width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .about-section h2 {
     font-size: 1.5rem;
