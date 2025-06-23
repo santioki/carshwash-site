@@ -526,3 +526,48 @@ font-weight: bold;
     width: 90%;
   }
 }
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .highlight-card,
+  .card,
+  .process-step,
+  .valet-block,
+  .booking-form,
+  .gallery img {
+    width: 100% !important;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-images {
+    padding-left: 0 !important;
+    align-items: center !important;
+  }
+
+  .about-images img {
+    width: 90% !important;
+    position: static !important;
+    transform: none !important;
+    margin: 10px auto;
+  }
+
+  .services-grid,
+  .process-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .booking-form-section,
+  .about,
+  .testimonials,
+  .contact {
+    padding: 40px 20px !important;
+  }
+
+  .features {
+    padding: 60px 20px !important;
+  }
+}
