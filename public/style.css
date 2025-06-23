@@ -483,23 +483,46 @@ font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
-  .container {
+  .about {
     flex-direction: column;
-    padding: 10px;
+    padding: 40px 20px;
   }
 
-  .side-column {
-    width: 100%;
+  .about-text,
+  .about-images {
+    padding: 0;
+    text-align: center;
+    align-items: center;
   }
 
-  .main-content {
-    width: 100%;
+  .about-images img:first-child,
+  .about-images img:last-child {
+    width: 90% !important;
+    position: static !important;
+    transform: none !important;
+    margin-bottom: 20px;
+  }
+
+  .services-grid,
+  .process-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .process-step {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .gallery img {
+    width: 90%;
+    height: auto;
+  }
+
+  .booking-form {
+    width: 90%;
   }
 }
-* {
-  box-sizing: border-box;
-}     
