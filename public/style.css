@@ -361,7 +361,15 @@ p {
   color: white;
   padding: 15px;
   text-align: center;
+  width: 100%;
+  position: static;
+  margin-top: 40px;
+  font-size: 16px;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
+
+
 .booking-form-section {
   padding: 80px 20px;
   background-color: #fff;

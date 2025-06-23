@@ -146,9 +146,9 @@
 
 
   <div class="cookie-banner">
-    <p>We use cookies to improve your experience.</p>
-    <button>Accept</button>
-  </div>
+  <p>We use cookies to improve your experience.</p>
+  <button onclick="acceptCookies()">Accept</button>
+</div>
 
 
 <footer class="contact-footer">
@@ -172,6 +172,18 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.querySelector(".cookie-banner");
+    const btn = banner?.querySelector("button");
+
+    if (btn) {
+      btn.addEventListener("click", function () {
+        banner.style.display = "none";
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
