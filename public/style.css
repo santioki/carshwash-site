@@ -613,3 +613,33 @@ font-weight: bold;
   word-break: break-word;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  .about-text {
+    text-align: center;
+    font-weight: 600;
+    padding: 0 20px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .process-step::after {
+    font-size: 15px;
+    padding: 16px;
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
