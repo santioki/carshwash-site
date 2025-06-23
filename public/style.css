@@ -566,8 +566,8 @@ font-weight: bold;
 
 .highlights {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   padding: 40px 20px;
   background-color: #0a2540;
@@ -579,7 +579,34 @@ font-weight: bold;
   font-weight: bold;
   border-radius: 10px;
   text-align: center;
+  width: 100%;
+  max-width: 320px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 300px;
+
+
 }
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #0a2540;
+}
+
+.highlight-card {
+  background-color: #f2f2f2;
+  padding: 16px 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+
+
