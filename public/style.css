@@ -1,0 +1,484 @@
+/* General Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f1f5f9;
+  color: #111;
+}
+
+header h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #0a2540, #133d66);
+  padding: 30px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid #facc15;
+}
+
+h1, h2, h3 {
+  margin: 0 0 15px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.highlights {
+  background-color: #0a2540;
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.highlight-card {
+  background-color: #e4e2db;
+  color: #0a2540;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 220px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.features {
+  text-align: center;
+  padding: 100px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: featureBackgrounds 9s infinite;
+}
+@keyframes featureBackgrounds {
+  0% {
+    background-image: url('gallery/cover1.jpg');
+  }
+  33% {
+    background-image: url('gallery/cover2.jpg');
+  }
+  66% {
+    background-image: url('gallery/cover3.jpg');
+  }
+  100% {
+    background-image: url('gallery/cover1.jpg');
+  }
+}
+
+.features button {
+  padding: 16px 32px;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 60px;
+  background-color: #fff;
+  font-size: 20px;
+  line-height: 1.7;
+  min-height: 600px;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  max-width: 520px;
+  line-height: 1.9;
+  padding-left: 60px;
+  font-size: 22px;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0a2540;
+  margin-bottom: 25px;
+}
+
+.about-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 80px; /* increased from 0 to 80px for more right shift */
+}
+
+.about-images img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.about-images img:first-child {
+  width: 560px;
+  z-index: 2;
+  position: relative;
+}
+
+.about-images img:last-child {
+  width: 520px;
+  position: absolute;
+  top: 66%;
+  left: 0;
+  transform: translateX(600px) translateY(-50%);
+  z-index: 1;
+}
+
+.testimonials, .contact {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  min-height: auto;
+}
+
+
+.process {
+  padding: 40px 20px;
+  text-align: center;
+  background-image: url('gallery/after1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.process h2 {
+  font-weight: bold;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.process::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.services {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #e2e8f0;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #0a2540;
+  color: white;
+  padding: 60px;
+  border-radius: 10px;
+  width: 320px;
+  height: 250px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card .icon {
+  width: 40px;
+  margin-right: 10px;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(98%) saturate(1175%) hue-rotate(359deg) brightness(107%) contrast(104%);
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.note {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.gallery {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.process-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step, .valet-block, .card {
+  background-color: #0a2540;
+  color: white;
+  padding: 60px;
+  border-radius: 10px;
+  width: 320px;
+  height: 250px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.process-step[data-step="1"]::after {
+  content: "Booking your car wash is quick and simple online or by phone. When you arrive, our welcoming team takes a moment to understand exactly what you're looking for. Whether it’s a quick refresh or a full deep clean, we tailor the service to meet your needs with precision and care.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 37, 64, 0.95);
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity  0.3s ease;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.process-step[data-step="2"]::after {
+  content: "Before we begin, our team inspects your vehicle to spot any areas that need special care. This helps us tailor the cleaning process to your car’s condition. We then use eco-friendly products and modern techniques to carry out a full clean, inside and out, based on the services you selected.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:  100%;
+  height: 100%;
+  background-color: rgba(10, 37, 64, 0.95);
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.process-step[data-step="3"]::after {
+  content: "After the clean is complete, we inspect every area to make sure your vehicle meets our quality standards. You’re then invited to check the result to confirm everything is perfect before driving away.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 37, 64, 0.95);
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.process-step:hover::after {
+  opacity: 1;
+}
+
+.process-step:hover h3,
+.process-step:hover p {
+  opacity: 0;
+}
+
+.cookie-banner {
+  background-color: #0a2540;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+.booking-form-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.booking-form-section h2 {
+  color: #0a2540;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.booking-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #0a2540;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.booking-form button {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #facc15;
+  color: #0a2540;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #e0b60e;
+}
+
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.contact-header-highlight {
+  display: inline-block;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.contact-header-highlight h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #0a2540;
+}
+
+.contact-button-container {
+  margin-top: 20px;
+}
+
+.reach-out-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #facc15;
+  color: #0a2540;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.contact-info div {
+  color: #0a2540;
+  font-weight: bold;
+  color: #0a2540;
+font-weight: bold;
+
+}
+.contact-footer {
+  background-color: #0a2540;
+  color: white;
+  padding: 30px 40px;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  border-top: 4px solid #facc15;
+}
+
+.contact-footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.booking-form select,
+.booking-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+

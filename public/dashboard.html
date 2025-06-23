@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <a href="admin.html">Log out</a>
+  </header>
+
+  <section>
+    <h2>Bookings</h2>
+    <div id="bookings-list">Loading...</div>
+  </section>
+
+  <section>
+    <h2>Contact Messages</h2>
+    <div id="contact-messages">Loading...</div>
+  </section>
+
+  <script>
+    async function loadDashboardData() {
+      try {
+        const bookingsRes = await fetch('/api/admin/bookings'); 
+
+        const bookings = await bookingsRes.json();
+
+        const bookingsDiv = document.getElementById('bookings-list');
+        bookingsDiv.innerHTML = bookings.map(b => `
+          <div>
+            <strong>${b.fullName}</strong> - ${b.phone} - ${b.location} - ${b.service} - ${b.carSize}
+          </div>
+        `).join('');
+
+        const contactsRes = await fetch('/api/admin/contacts'); 
+
+        const contacts = await contactsRes.json();
+
+        const contactsDiv = document.getElementById('contact-messages');
+
+
+        contactsDiv.innerHTML = contacts.map(c => `
+          <div>
+            <strong>${c.name}</strong> - ${c.email}<br/>
+            ${c.message}
+          </div>
+        `).join('');
+
+      } catch (error) {
+        console.error("Error loading data", error);
+        alert("Error loading data");
+      }
+    }
+
+    loadDashboardData();
+  </script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

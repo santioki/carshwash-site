@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Car Detailing Mobile Service</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>Pro Car Detailing Mobile Service</h1>
+  </header>
+<section class="highlights">
+  <div class="highlight-card">✅ Expert Detailing Services</div>
+  <div class="highlight-card">✅ Eco-Friendly Solutions</div>
+  <div class="highlight-card">✅ Mobile Only</div>
+  <div class="highlight-card">✅ Affordable Pricing</div>
+</section>
+
+
+  <section class="about">
+  <div class="about-text">
+    <h2>About Mobile Pro Car Wash</h2>
+    <p>Welcome to Pro Car Detailing Mobile Service, where convenience and expert vehicle care come together. We bring professional car wash services straight to your doorstep, whether you are at home, at work, or anywhere in the London area.</p>
+    <p>Our team arrives fully equipped with water supply, power source, and high-pressure cleaning tools so you do not have to provide anything. We use only premium products that restore your car's shine and cleanliness without causing damage.</p>
+    <p>Every wash is handled with care and precision. You can easily book online or by phone and leave the rest to us. Let us handle the hard work while you save time and enjoy a spotless vehicle.</p>
+  </div>
+  <div class="about-images">
+    <img src="gallery/img5.jpg" alt="Car Image 5">
+    <img src="gallery/img6.jpg" alt="Car Image 6">
+  </div>
+</section>
+
+
+
+  <section class="services">
+    <h2>Services That We Offer</h2>
+    <div class="services-grid">
+      <div class="card">
+        <h3><img src="car-icon.png" class="icon"> Exterior Valet</h3>
+        <p>S - £25</p>
+        <p>M - £30</p>
+        <p>L - £40</p>
+        <p><em>SUV & 7 seaters: £5 extra (up to 45 minutes)</em></p>
+      </div>
+      <div class="card">
+        <h3><img src="car-icon.png" class="icon"> Basic In & Out Valet</h3>
+        <p>S - £30</p>
+        <p>M - £35</p>
+        <p>L - £40</p>
+         <p><em>SUV & 7 seaters: £5 extra (up to 1 hour 15 minutes)</em></p>
+      </div>
+      <div class="card">
+        <h3><img src="car-icon.png" class="icon"> Shine Mini Valet</h3>
+        <p>S - £45</p>
+        <p>M - £50</p>
+        <p>L - £55</p>
+        <p><em>SUV & 7 seaters: extra time up to 1 hour 15 minutes</em></p>
+      </div>
+      <div class="card">
+        <h3><img src="car-icon.png" class="icon"> Full Valeting In & Out</h3>
+        <p>S - £110</p>
+        <p>M - £120</p>
+        <p>L - £140</p>
+         <p><em>SUV & 7 seaters: £5 extra (up to 1 hour 15 minutes)</em></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="note">
+    <u>Note:</u> Ceramic Coating Spray Polish costs an additional £10 on any service or size.
+  </div>
+
+  <section class="process">
+    <h2>Our Detailing Process</h2>
+    <div class="process-grid">
+      <div class="process-step" data-step="1">
+        <h3>Step 1</h3>
+        <p>Booking</p>
+      </div>
+      <div class="process-step" data-step="2">
+        <h3>Step 2</h3>
+        <p>Inspection&Cleaning</p>
+      </div>
+      <div class="process-step" data-step="3">
+        <h3>Step 3</h3>
+        <p>Final Inspection</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <img src="gallery/before1.jpg" alt="Gallery Image 1" />
+    <img src="gallery/before2.jpg" alt="Gallery Image 2" />
+    <img src="gallery/before3.jpg" alt="Gallery Image 3" />
+    <img src="gallery/before4.jpg" alt="Gallery Image 4" />
+    <img src="gallery/before5.jpg" alt="Gallery Image 5" />
+  </section>
+<section class="booking-form-section">
+  <h2>Book Your Wash</h2>
+  <form id="booking-form" class="booking-form" action="http://localhost:5000/api/bookings" method="POST">
+
+    <label for="full-name">Full Name</label>
+    <input type="text" id="full-name" name="full-name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" required>
+
+    <label for="service">Service Type</label>
+    <select id="service" name="service" required>
+      <option value="">-- Select a Service --</option>
+      <option value="standard">Exterior Valet</option>
+      <option value="deep-clean">Basic In & Out Valet</option>
+      <option value="interior">Shine Mini Valet</option>
+      <option value="interior">Full Valeting In & Out</option>
+    </select> 
+
+    <label for="car-size">Car Size</label>
+    <select id="car-size" name="car-size" required>
+      <option value="">-- Vehicle Type (by size) --</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <button id="book-now" type="submit">Confirm Booking</button>
+  </form>
+</section>
+
+
+
+<section class="contact">
+  <div class="contact-header-highlight">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="contact-button-container">
+    <a href="contact.html"><button class="reach-out-btn plain">Reach out</button></a>
+  </div>
+</section>
+
+
+  <div class="cookie-banner">
+    <p>We use cookies to improve your experience.</p>
+    <button>Accept</button>
+  </div>node server.js
+
+
+<footer class="contact-footer">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 24 24">
+      <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.243L13.414 12 20 17.757V6.243zM4 6.243v11.514L10.586 12 4 6.243zM5.414 20h13.172L12 14.414 5.414 20z"/>
+    </svg>
+    Pro.car.detailing@gmail.com
+  </div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.54.76 3.91.76a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.37.27 2.7.76 3.91a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+    </svg>
+    07925656956
+  </div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/>
+    </svg>
+    South East London, UK
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
