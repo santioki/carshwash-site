@@ -23,11 +23,6 @@ app.use('/api/bookings', bookingsRoute);
 app.use('/api/contact', contactRoute);
 app.use('/api/admin', adminRoute);
 
-// ✅ Fallback route for client-side routing (if needed)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
