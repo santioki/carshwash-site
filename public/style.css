@@ -561,9 +561,15 @@ font-weight: bold;
     margin: 10px auto;
   }
   @media (max-width: 768px) {
-  a[href^="tel"] {
+  a[href^="tel"],
+  a[href^="tel"]:link,
+  a[href^="tel"]:visited,
+  a[href^="tel"]:hover,
+  a[href^="tel"]:active {
     color: inherit !important;
     text-decoration: none !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
   }
 }
 
