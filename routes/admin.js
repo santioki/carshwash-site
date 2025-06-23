@@ -31,7 +31,7 @@ router.get('/bookings', async (req, res) => {
 });
 
 // GET /api/admin/contacts
-router.get('/contacts', async (req, res) => {
+router.get('/contacts/:id', async (req, res) => {
   try {
     const contacts = await Contact.find();
     res.json(contacts);
