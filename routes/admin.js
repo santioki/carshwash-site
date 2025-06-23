@@ -31,14 +31,25 @@ router.get('/bookings', async (req, res) => {
 });
 
 // GET /api/admin/contacts
-router.get('/contacts/:id', async (req, res) => {
+router.get('/contacts', async (req, res) => {
   try {
     const contacts = await Contact.find();
-    res.json(contacts);
+    res.json(contacts); // ← SAME HERE
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch contacts" });
+    res.status(500).json({ error: 'Failed to fetch contacts' });
   }
 });
+
+// DELETE a booking by ID
+router.get('/bookings', async (req, res) => {
+  try {
+    const bookings = await Booking.find();
+    res.json(bookings); // ← THIS MUST BE "res.json", not "res.send"
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch bookings' });
+  }
+});
+
 // DELETE a booking by ID
 router.delete('/bookings/:id', async (req, res) => {
   try {
@@ -48,6 +59,8 @@ router.delete('/bookings/:id', async (req, res) => {
     res.status(500).json({ error: 'Failed to delete booking' });
   }
 });
+
+
 
 // DELETE a contact message by ID
 router.delete('/contacts/:id', async (req, res) => {

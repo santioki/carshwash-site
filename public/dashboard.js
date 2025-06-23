@@ -4,7 +4,12 @@ loadDashboardData();
 async function loadDashboardData() {
   try {
     // Fetch and render bookings
-    const bookingsRes = await fetch('/api/admin/bookings');
+   const bookingsRes = await fetch('/api/admin/bookings');
+const contentType = bookingsRes.headers.get('content-type');
+if (!contentType || !contentType.includes('application/json')) {
+  throw new Error('Response is not JSON. Received: ' + contentType);
+}
+
     const bookings = await bookingsRes.json();
 
     const bookingsDiv = document.getElementById('bookings-list');
@@ -39,6 +44,11 @@ async function loadDashboardData() {
 
     // Fetch and render contact messages
     const contactsRes = await fetch('/api/admin/contacts');
+const contactContentType = contactsRes.headers.get('content-type');
+if (!contactContentType || !contactContentType.includes('application/json')) {
+  throw new Error('Response is not JSON. Received: ' + contactContentType);
+}
+
     const contacts = await contactsRes.json();
 
     const contactsDiv = document.getElementById('contact-messages');
@@ -68,35 +78,37 @@ async function loadDashboardData() {
     `;
   } catch (error) {
     console.error("Error loading dashboard data:", error);
-    alert("Error loading dashboard data");
+    alert("Error loading dashboard data,\n" + error.message);
   }
 }
 
 // Delete a booking
 function deleteBooking(id) {
-  fetch(`/admin/bookings/${id}`, {
+  fetch(`/api/admin/bookings/${id}`, {
     method: 'DELETE'
   })
     .then(res => res.json())
     .then(data => {
       alert(data.message || 'Booking deleted');
-      location.reload();
+      loadDashboardData ()
     })
-    .catch(err => {
-      console.error(err);
-      alert('Error deleting booking');
-    });
+    .catch(async err => {
+  const errorText = await err.message || err;
+  console.error('Delete Error:', errorText);
+  alert('Error deleting booking: ' + errorText);
+});
+
 }
 
 // Delete a contact message
 function deleteContact(id) {
-  fetch(`/admin/contacts/${id}`, {
+  fetch(`/api/admin/contacts/${id}`, {
     method: 'DELETE'
   })
     .then(res => res.json())
     .then(data => {
       alert(data.message || 'Contact message deleted');
-      location.reload();
+      loadDashboardData;
     })
     .catch(err => {
       console.error(err);
