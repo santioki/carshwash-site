@@ -39,5 +39,24 @@ router.get('/contacts', async (req, res) => {
     res.status(500).json({ error: "Failed to fetch contacts" });
   }
 });
+// DELETE a booking by ID
+router.delete('/bookings/:id', async (req, res) => {
+  try {
+    await Booking.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Booking deleted' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete booking' });
+  }
+});
+
+// DELETE a contact message by ID
+router.delete('/contacts/:id', async (req, res) => {
+  try {
+    await Contact.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Contact deleted' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete contact message' });
+  }
+});
 
 module.exports = router;

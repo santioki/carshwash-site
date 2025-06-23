@@ -1,51 +1,105 @@
-document.addEventListener("DOMContentLoaded", async () => {
+// Load data on page load
+loadDashboardData();
+
+async function loadDashboardData() {
   try {
-    // Fetch bookings
-    const bookingsRes = await fetch("/api/admin/bookings");
+    // Fetch and render bookings
+    const bookingsRes = await fetch('/api/admin/bookings');
     const bookings = await bookingsRes.json();
 
-    const bookingsContainer = document.getElementById("bookings-list");
-    if (bookings.length === 0) {
-      bookingsContainer.innerHTML = "<p>No bookings yet.</p>";
-    } else {
-      bookings.forEach(booking => {
-        const bookingEl = document.createElement("div");
-        bookingEl.className = "booking-entry";
-        bookingEl.innerHTML = `
-          <strong>Name:</strong> ${booking.fullName}<br>
-          <strong>Phone:</strong> ${booking.phone}<br>
-          <strong>Location:</strong> ${booking.location}<br>
-          <strong>Service:</strong> ${booking.service}<br>
-          <strong>Car Size:</strong> ${booking.carSize}<br>
-          <hr>
-        `;
-        bookingsContainer.appendChild(bookingEl);
-      });
-    }
+    const bookingsDiv = document.getElementById('bookings-list');
+    bookingsDiv.innerHTML = `
+      <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Location</th>
+            <th>Service</th>
+            <th>Car Size</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${bookings.map(b => `
+            <tr>
+              <td>${b.fullName}</td>
+              <td>${b.phone}</td>
+              <td>${b.location}</td>
+              <td>${b.service}</td>
+              <td>${b.carSize}</td>
+              <td>${new Date(b.createdAt).toLocaleString()}</td>
+              <td><button onclick="deleteBooking('${b._id}')">Delete</button></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
 
-    // Fetch contacts
-    const contactsRes = await fetch("/api/admin/contacts");
+    // Fetch and render contact messages
+    const contactsRes = await fetch('/api/admin/contacts');
     const contacts = await contactsRes.json();
 
-    const contactsContainer = document.getElementById("contact-messages");
-    if (contacts.length === 0) {
-      contactsContainer.innerHTML = "<p>No contact messages yet.</p>";
-    } else {
-      contacts.forEach(contact => {
-        const contactEl = document.createElement("div");
-        contactEl.className = "contact-entry";
-        contactEl.innerHTML = `
-          <strong>Name:</strong> ${contact.name}<br>
-          <strong>Email:</strong> ${contact.email}<br>
-          <strong>Message:</strong> ${contact.message}<br>
-          <hr>
-        `;
-        contactsContainer.appendChild(contactEl);
-      });
-    }
-
-  } catch (err) {
-    console.error("Failed to load data", err);
-    alert("Error loading data");
+    const contactsDiv = document.getElementById('contact-messages');
+    contactsDiv.innerHTML = `
+      <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${contacts.map(c => `
+            <tr>
+              <td>${c.name}</td>
+              <td>${c.email}</td>
+              <td>${c.message}</td>
+              <td>${new Date(c.createdAt).toLocaleString()}</td>
+              <td><button onclick="deleteContact('${c._id}')">Delete</button></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+  } catch (error) {
+    console.error("Error loading dashboard data:", error);
+    alert("Error loading dashboard data");
   }
-});
+}
+
+// Delete a booking
+function deleteBooking(id) {
+  fetch(`/admin/bookings/${id}`, {
+    method: 'DELETE'
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message || 'Booking deleted');
+      location.reload();
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Error deleting booking');
+    });
+}
+
+// Delete a contact message
+function deleteContact(id) {
+  fetch(`/admin/contacts/${id}`, {
+    method: 'DELETE'
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message || 'Contact message deleted');
+      location.reload();
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Error deleting contact message');
+    });
+}
