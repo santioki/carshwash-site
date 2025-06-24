@@ -13,7 +13,6 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  // DEBUG LOGS
   console.log('BODY:', req.body);
   console.log('Entered username:', username);
   console.log('Entered password:', password);
@@ -26,6 +25,7 @@ router.post('/login', (req, res) => {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 });
+
 
 
 // GET /api/admin/bookings
