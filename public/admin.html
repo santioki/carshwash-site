@@ -24,30 +24,35 @@
   </section>
 
   <script>
-  document.getElementById("admin-login-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
+document.getElementById("admin-login-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
+  try {
     const response = await fetch("https://prowashit.com/api/admin/login", {
-    method: "POST",
-    headers: {
+      method: "POST",
+      headers: {
         "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ username, password })
-});
+      },
+      body: JSON.stringify({ username, password })
+    });
 
     const result = await response.json();
 
-    if (response.ok) {
-      alert("Login successful!");
+     if (response.ok) {
       window.location.href = "/dashboard.html";
     } else {
-      alert("Login failed: " + result.error);
+      alert(result.message || "Login failed");
     }
-  });
+  } catch (error) {
+    alert("Server error");
+    console.error(error);
+  }
+});
 </script>
+
 
 
 </body>
