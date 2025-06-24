@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("https://www.prowash.it.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
