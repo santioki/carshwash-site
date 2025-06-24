@@ -13,6 +13,11 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
 
+  console.log("Entered username:", username);
+  console.log("Entered password:", password);
+  console.log("Expected username:", ADMIN_USERNAME);
+  console.log("Expected username:", ADMIN_PASSWORD);
+
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
     res.status(200).json({ message: "Login successful" });
   } else {
