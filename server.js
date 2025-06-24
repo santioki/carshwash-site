@@ -9,6 +9,14 @@ const contactRoute = require('./routes/contact');
 const adminRoute = require('./routes/admin');
 
 const app = express();
+app.use((req, res, next) => {
+  const host = req.headers.host;
+  if (host === 'prowash.it.com') {
+    return res.redirect(301, 'https://www.prowash.it.com' + req.url);
+  }
+  next();
+});
+
 const PORT = process.env.PORT || 5000;
 
 // Middleware
