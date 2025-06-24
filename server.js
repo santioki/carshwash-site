@@ -33,6 +33,7 @@ app.use(express.static("public"));
 app.use("/api/bookings", bookingsRoute);
 app.use("/api/contact", contactRoute);
 app.use("/api/admin", adminRoute);
+console.log("Admin route mounted at /appi/admin");
 
 // MongoDB Connection
 mongoose
