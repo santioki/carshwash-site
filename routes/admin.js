@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 
-const Booking = require('../models/Booking'); // ✅ Add this
+const Booking = require('../models/booking'); // ✅ Add this
 const Contact = require('../models/contact'); // ✅ Add this
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
