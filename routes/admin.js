@@ -9,21 +9,24 @@ const Contact = require('../models/contact'); // ✅ Add this
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
-// POST /api/admin/login
+
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  console.log("Entered username:", username);
-  console.log("Entered password:", password);
-  console.log("Expected username:", ADMIN_USERNAME);
-  console.log("Expected username:", ADMIN_PASSWORD);
+  // DEBUG LOGS
+  console.log('BODY:', req.body);
+  console.log('Entered username:', username);
+  console.log('Entered password:', password);
+  console.log('Expected username:', ADMIN_USERNAME);
+  console.log('Expected password:', ADMIN_PASSWORD);
 
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-    res.status(200).json({ message: "Login successful" });
+    return res.status(200).json({ message: "Login successful" });
   } else {
-    res.status(401).json({ error: "Invalid credentials" });
+    return res.status(401).json({ error: "Invalid credentials" });
   }
 });
+
 
 // GET /api/admin/bookings
 router.get('/bookings', async (req, res) => {
