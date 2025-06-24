@@ -12,7 +12,7 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
-
+  console.log('[LOGIN ROUTE HIT]');
   console.log('BODY:', req.body);
   console.log('Entered username:', username);
   console.log('Entered password:', password);
