@@ -24,39 +24,13 @@
   </section>
 
   <script>
-    document.getElementById("admin-login-form").addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      try {
-        const response = await fetch('/api/admin/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, password })
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-          window.location.href = "dashboard.html"; // redirect to dashboard
-        } else {
-          document.getElementById("login-message").textContent = result.message || "Login failed.";
-        }
-      } catch (err) {
-        document.getElementById("login-message").textContent = "Server error.";
-      }
-    });
-  </script>
-  <script>
   document.getElementById("admin-login-form").addEventListener("submit", async function(e) {
     e.preventDefault();
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("/api/admin/login", {
+    const response = await fetch("http://localhost:5000/api/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -71,6 +45,7 @@
       window.location.href = "/dashboard.html";
     } else {
       alert("Login failed: " + result.error);
+      console.log("Server said:", result);
     }
   });
 </script>
